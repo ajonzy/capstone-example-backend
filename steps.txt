@@ -1,0 +1,20 @@
+Steps to build out an API
+
+1) Set up virtual environment with pipenv. Look in the Pipfile of any Flask API you have already built, or even the Pipfile of this example project, to remind yourself what packages to install. Remember, the command to install packages is "pipenv install {package-name}".
+
+2) Write the boilerplate code for the project. This will include importing all your packages, instatiating them in the code, building the path to your database, and writing the code at the bottom to run your app.
+
+3) Build out the class modal for your database tables. This will include defining what columns each table should have, the rules each column should use, and the constructor function for the class.
+
+4) Build out a marshmallow schema class for each table. This will include all the fields you want sent back to the frontend. Also make sure to instantiate your marshmallow schema class twice, once for a single item, and once for many items.
+
+5) Instruct your code to build your tables in your database. To do this, make sure you enter your virtual environment shell by running "pipenv shell". Then open a python shell by typing "python". Then run:
+
+    - from {the name of your file, which should be called app} import db
+    - db.create_all()
+
+6) Build the endpoints you want for each of your tables. These will be your POST, GET, PUT, and DELETE routes. Remember, not every table needs to have every type of endpoint. 
+
+7) Host on heroku.com. Remember to add a file to the project named "Procfile" with the command to run the project. See the Procfile in this example project for a command you can use. Just make sure to have installed the gunicorn package in your project if you haven't already!
+
+8) Use your new project url from heroku combined with your endpoints to connect to your backend from your frontend.
